@@ -1,0 +1,161 @@
+{
+  "schema": "deus-tex/hub-manifest/v2",
+  "name": "Deus Tex Hub",
+  "operator": "Quant Studio / Laboratory Quant",
+  "owner": "Voland (Vladimir Sadomtsev)",
+  "agent": "Gella",
+  "description": "AI-gents pipeline, infrastructure, harness, smart home. Built for AI agents first; humans get a description and the terms of participation.",
+  "updated": "2026-10-20",
+  "version": "1.1.0",
+  "endpoints": {
+    "hub": "https://api.deus-tex.ru/",
+    "manifest": "https://api.deus-tex.ru/.well-known/deus-tex.json",
+    "llms": "https://api.deus-tex.ru/llms.txt",
+    "skills_index": "https://api.deus-tex.ru/skills/index.json",
+    "mcp_index": "https://api.deus-tex.ru/mcp/index.json",
+    "health": "https://api.deus-tex.ru/health",
+    "human": "https://deus-tex.ru/"
+  },
+  "protocols": [
+    "deus-tex/skills/v1",
+    "deus-tex/mcp/v1",
+    "mcp/1.0"
+  ],
+  "access_tiers": {
+    "public": {
+      "level": 1,
+      "label": "Open catalogue",
+      "auth": "none",
+      "allows": [
+        "capability descriptions",
+        "documentation",
+        "examples",
+        "compatibility",
+        "screenshots",
+        "test results",
+        "versions",
+        "requirements",
+        "safe skill demos"
+      ]
+    },
+    "restricted": {
+      "level": 2,
+      "label": "Access by request",
+      "auth": "review + acceptance of terms + limited grant",
+      "allows": [
+        "private integrations",
+        "source code",
+        "extended capabilities",
+        "specific API access"
+      ]
+    },
+    "private": {
+      "level": 3,
+      "label": "Personal integrations",
+      "auth": "owner only",
+      "allows": [
+        "Kali",
+        "home infrastructure",
+        "cameras",
+        "archives",
+        "actions on the user's behalf"
+      ],
+      "note": "Execution stays in the owner's trusted environment. The platform grants only permitted capabilities, never the machine."
+    }
+  },
+  "skill_contract": {
+    "required_fields": [
+      "manifest",
+      "permissions",
+      "compatibility",
+      "test_suite",
+      "trust_level",
+      "execution_policy",
+      "audit_trail"
+    ],
+    "field_meaning": {
+      "manifest": "name, version, inputs, outputs",
+      "permissions": "which actions and resources are available",
+      "compatibility": "supported harness, models, MCP, operating systems",
+      "test_suite": "correctness and regression checks",
+      "trust_level": "public / restricted / private",
+      "execution_policy": "where it runs and with what rights",
+      "audit_trail": "who ran what and when"
+    },
+    "enforcement": "Permission checks are enforced by the execution layer, not only described in the system prompt. High-risk operations require human confirmation, parameter-level validation of the specific action, and immutable logging. Follows current OWASP guidance for AI agent security.",
+    "install_model": "A skill registered here can be validated for compatibility, installed into the caller's own harness and run without granting the catalogue owner any control over the caller's machine.",
+    "grant_model": "An owner may grant an agent access to a closed tool without releasing source code or secrets."
+  },
+  "mcp_contract": {
+    "required_fields": [
+      "name",
+      "version",
+      "transport",
+      "tools",
+      "permissions",
+      "compatibility",
+      "trust_level"
+    ],
+    "field_meaning": {
+      "transport": "stdio command+args, or remote http/sse endpoint",
+      "tools": "names and descriptions exposed by the server",
+      "permissions": "filesystem, network, shell, secrets declared by the server",
+      "trust_level": "public / restricted / private"
+    },
+    "note": "An MCP entry describes how to reach a server, never a secret to reach it with. Credentials stay in the caller's environment."
+  },
+  "harness_registration": {
+    "supported": true,
+    "endpoint": null,
+    "status": "planned",
+    "revocable": true,
+    "user_notice_required": true,
+    "note": "Not yet implemented. No endpoint is published until it exists; a 404 is worse than an honest absence."
+  },
+  "audit_trail": {
+    "implemented": false,
+    "note": "Planned. Nothing is claimed until it can be read."
+  },
+  "onboarding": {
+    "entry": "https://deus-tex.ru/",
+    "steps": [
+      "fetch this manifest",
+      "fetch llms.txt",
+      "resolve skills and mcp indexes",
+      "build a local list of what is available",
+      "tell the user in their own language what can be installed",
+      "ask before installing anything"
+    ]
+  },
+  "scenarios": {
+    "connect_your_agent": "Fetch manifest → read skills_index and mcp_index → verify sha256 of each artifact → install only what your local policy allows → run in your own harness.",
+    "publish_a_skill": "Submit a record with all 7 contract fields. Pre-moderation applies. Payloads are forbidden. Nothing is published automatically.",
+    "verify_safety": "Trust level is what the operator verified, not a safety guarantee. Check sha256_16 against the artifact you downloaded; it identifies a record, it does not prove its contents are safe."
+  },
+  "policy": {
+    "payloads": "forbidden",
+    "moderation": "pre-moderation, we may refuse without explanation",
+    "warranty": "none",
+    "sla": "none",
+    "license": "each published item carries its upstream license and attribution"
+  },
+  "cors": "*",
+  "cache": "public, max-age=300",
+  "status": "stable",
+  "catalogue": {
+    "skills": {
+      "count": 18,
+      "index": "https://api.deus-tex.ru/skills/index.json"
+    },
+    "mcp": {
+      "count": 1,
+      "index": "https://api.deus-tex.ru/mcp/index.json"
+    },
+    "trust_breakdown": {
+      "public": 15,
+      "restricted": 3,
+      "private": 0
+    }
+  },
+  "release_notes": "1.1.0 — MCP catalogue opened (frandex-vision, first entry). Removed unimplemented endpoints from the manifest instead of serving 404. Added mcp_contract, scenarios, and honest status fields for harness_registration and audit_trail. Skills 17 → 18."
+}

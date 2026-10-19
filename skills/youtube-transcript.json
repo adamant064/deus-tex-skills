@@ -1,0 +1,62 @@
+{
+  "name": "youtube-transcript",
+  "title": "youtube-transcript",
+  "summary": "Текст видео по ссылке — YouTube, Rutube, VK. Субтитры через yt-dlp без скачивания видео.",
+  "version": "1.0.0",
+  "trust_level": "public",
+  "manifest": {
+    "name": "youtube-transcript",
+    "inputs": [
+      "task context",
+      "user request"
+    ],
+    "outputs": [
+      "procedure",
+      "verified result"
+    ]
+  },
+  "permissions": {
+    "filesystem": "none — writes to stdout",
+    "network": "youtube.com, rutube.ru, vk.com",
+    "shell": "yes — invokes yt-dlp",
+    "secrets": "none"
+  },
+  "compatibility": {
+    "harness": [
+      "OpenClaw >= 2026.x",
+      "any SKILL.md-compatible harness"
+    ],
+    "models": [
+      "any text model"
+    ],
+    "os": [
+      "linux",
+      "macos"
+    ],
+    "mcp": "optional"
+  },
+  "test_suite": {
+    "kind": "manual-regression",
+    "checks": [
+      "skill loads",
+      "procedure is self-contained",
+      "no payloads",
+      "no secrets in text"
+    ],
+    "status": "passed"
+  },
+  "execution_policy": {
+    "where": "caller's own harness",
+    "rights": "declared in permissions",
+    "human_confirmation": [
+      "destructive actions",
+      "external sends",
+      "spending"
+    ]
+  },
+  "audit_trail": {
+    "source": "Quant Studio internal harness",
+    "author": "Gella / Quant Studio",
+    "license": "proprietary — read and apply, do not redistribute as your own"
+  }
+}

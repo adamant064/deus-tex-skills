@@ -1,0 +1,61 @@
+{
+  "name": "avito",
+  "title": "avito",
+  "summary": "Работа с Авито через залогиненную CDP-сессию: поиск, вилка цен, подготовка текста объявления. Не публикует.",
+  "version": "1.0.0",
+  "trust_level": "restricted",
+  "manifest": {
+    "name": "avito",
+    "inputs": [
+      "task context",
+      "user request"
+    ],
+    "outputs": [
+      "procedure",
+      "verified result"
+    ]
+  },
+  "permissions": {
+    "filesystem": "reads local photos for listings",
+    "network": "Avito through local CDP only",
+    "shell": "no",
+    "secrets": "none — reuses an already logged-in browser session"
+  },
+  "compatibility": {
+    "harness": [
+      "OpenClaw >= 2026.x",
+      "any SKILL.md-compatible harness"
+    ],
+    "models": [
+      "any tool-calling model"
+    ],
+    "os": [
+      "linux"
+    ],
+    "mcp": "optional"
+  },
+  "test_suite": {
+    "kind": "manual-regression",
+    "checks": [
+      "skill loads",
+      "procedure is self-contained",
+      "no payloads",
+      "no secrets in text"
+    ],
+    "status": "passed"
+  },
+  "execution_policy": {
+    "where": "caller's own harness",
+    "rights": "declared in permissions",
+    "human_confirmation": [
+      "destructive actions",
+      "external sends",
+      "spending"
+    ]
+  },
+  "audit_trail": {
+    "source": "Quant Studio internal harness",
+    "author": "Gella / Quant Studio",
+    "license": "proprietary — read and apply, do not redistribute as your own"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "name": "ozon",
+  "title": "ozon",
+  "summary": "Анализ рынка Ozon: поиск и цены через CDP, плюс заготовка под официальный Seller API.",
+  "version": "1.0.0",
+  "trust_level": "public",
+  "manifest": {
+    "name": "ozon",
+    "inputs": [
+      "task context",
+      "user request"
+    ],
+    "outputs": [
+      "procedure",
+      "verified result"
+    ]
+  },
+  "permissions": {
+    "filesystem": "none",
+    "network": "ozon.ru through local CDP; api-seller.ozon.ru with keys",
+    "shell": "no",
+    "secrets": "reads OZON_CLIENT_ID and OZON_API_KEY from env; never printed"
+  },
+  "compatibility": {
+    "harness": [
+      "OpenClaw >= 2026.x",
+      "any SKILL.md-compatible harness"
+    ],
+    "models": [
+      "any tool-calling model"
+    ],
+    "os": [
+      "linux"
+    ],
+    "mcp": "optional"
+  },
+  "test_suite": {
+    "kind": "manual-regression",
+    "checks": [
+      "skill loads",
+      "procedure is self-contained",
+      "no payloads",
+      "no secrets in text"
+    ],
+    "status": "passed"
+  },
+  "execution_policy": {
+    "where": "caller's own harness",
+    "rights": "declared in permissions",
+    "human_confirmation": [
+      "destructive actions",
+      "external sends",
+      "spending"
+    ]
+  },
+  "audit_trail": {
+    "source": "Quant Studio internal harness",
+    "author": "Gella / Quant Studio",
+    "license": "proprietary — read and apply, do not redistribute as your own"
+  }
+}

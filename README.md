@@ -37,10 +37,12 @@
 
 ## Каталог
 
-**19 скиллов.**
+**21 скилл + 1 MCP-сервер.**
 
 | Скилл | Доверие | Что делает |
 |---|---|---|
+| [`avito`](https://api.deus-tex.ru/skills/avito.json) | 🔒 restricted | Работа с Авито через залогиненную CDP-сессию: поиск, вилка цен, подготовка текста объявления. Не публикует. |
+| [`ozon`](https://api.deus-tex.ru/skills/ozon.json) | public | Анализ рынка Ozon: поиск и цены через CDP, заготовка под официальный Seller API. |
 | [`autonomous-continuation`](https://api.deus-tex.ru/skills/autonomous-continuation.json) | public | Метод: как агент действует самостоятельно, не спрашивая разрешения на внутреннее. Границы автономии, цикл execute-ver... |
 | [`home-control`](https://api.deus-tex.ru/skills/home-control.json) | 🔒 restricted | Управление Home Assistant из агента без облака: включить/выключить устройства, узнать датчики, сказать голосом через ... |
 | [`incremental-vector-index-build`](https://api.deus-tex.ru/skills/incremental-vector-index-build.json) | public | Инкрементальная индексация растущего локального корпуса в векторный индекс без полного пересчёта. |
@@ -60,6 +62,19 @@
 | [`session-context-cost-control`](https://api.deus-tex.ru/skills/session-context-cost-control.json) | public | Снижение расхода токенов: длинные сессии, раздутый контекст, дорогой tool-loop. |
 | [`shared-host-routing-change`](https://api.deus-tex.ru/skills/shared-host-routing-change.json) | public | Изменение сетевой маршрутизации и реверс-прокси на хосте, где живут другие прод-сервисы. |
 | [`virtualbox-vm-recovery`](https://api.deus-tex.ru/skills/virtualbox-vm-recovery.json) | public | Восстановление зависшей VirtualBox VM, не монтирующегося .vdi, headless-гостя без ответа. |
+| [`youtube-transcript`](https://api.deus-tex.ru/skills/youtube-transcript.json) | public | Текст видео по ссылке — YouTube, Rutube, VK. Субтитры через yt-dlp без скачивания видео. |
+
+## Каталог MCP
+
+**1 сервер.**
+
+| Сервер | Транспорт | Инструменты |
+|---|---|---|
+| [`frandex-vision`](https://api.deus-tex.ru/mcp/frandex-vision.json) | stdio | look, faces, remember, recall, daily |
+
+Индекс: <https://api.deus-tex.ru/mcp/index.json>
+
+MCP-запись описывает, **как добраться** до сервера, и никогда — каким секретом. Учётные данные остаются в окружении вызывающего.
 
 ## Как использовать
 

@@ -1,9 +1,14 @@
 {
   "schema": "deus-tex/skills-index/v1",
-  "hub_version": "1.0.0",
-  "updated": "2026-10-19",
+  "hub_version": "1.1.0",
+  "updated": "2026-10-20",
   "license_note": "Each record carries its own license. Attribution required.",
-  "count": 18,
+  "count": 21,
+  "trust_breakdown": {
+    "public": 17,
+    "restricted": 4,
+    "private": 0
+  },
   "skills": [
     {
       "name": "autonomous-continuation",
@@ -11,7 +16,15 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/autonomous-continuation.json",
-      "sha256_16": "bdfe2f2d0ddcb003"
+      "sha256_16": "d38e3c3afaa6912c"
+    },
+    {
+      "name": "avito",
+      "title": "avito",
+      "version": "1.0.0",
+      "trust_level": "restricted",
+      "endpoint": "/skills/avito.json",
+      "sha256_16": "fa6fef42c353c716"
     },
     {
       "name": "home-control",
@@ -19,7 +32,7 @@
       "version": "1.0.0",
       "trust_level": "restricted",
       "endpoint": "/skills/home-control.json",
-      "sha256_16": "e2c76f52a571cbe3"
+      "sha256_16": "0119aad8f4b3d080"
     },
     {
       "name": "incremental-vector-index-build",
@@ -27,7 +40,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/incremental-vector-index-build.json",
-      "sha256_16": "6a95828084dcb55e"
+      "sha256_16": "e5f6f739d43055ea"
     },
     {
       "name": "local-image-inspection",
@@ -35,7 +48,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/local-image-inspection.json",
-      "sha256_16": "6b3f7c461aa92bfe"
+      "sha256_16": "bc41e0b35e02de21"
     },
     {
       "name": "local-voice-bridge",
@@ -43,7 +56,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/local-voice-bridge.json",
-      "sha256_16": "ae36f09965395b84"
+      "sha256_16": "047a5f69123a3459"
     },
     {
       "name": "managed-browser-profile-recovery",
@@ -51,7 +64,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/managed-browser-profile-recovery.json",
-      "sha256_16": "9d1d20ad5966b14a"
+      "sha256_16": "05333a2b76b69173"
     },
     {
       "name": "mcp-server-from-python-core",
@@ -59,7 +72,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/mcp-server-from-python-core.json",
-      "sha256_16": "cd07035ffd59e116"
+      "sha256_16": "ee10bc23a6d41a9b"
     },
     {
       "name": "model-context-window",
@@ -67,7 +80,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/model-context-window.json",
-      "sha256_16": "1e4d22480597de2b"
+      "sha256_16": "40da3a597ffa03e9"
     },
     {
       "name": "nvr-mcp-integration",
@@ -75,7 +88,7 @@
       "version": "1.0.0",
       "trust_level": "restricted",
       "endpoint": "/skills/nvr-mcp-integration.json",
-      "sha256_16": "d0d15e2f548e4508"
+      "sha256_16": "9278fc77266347e7"
     },
     {
       "name": "openclaw-core-upgrade",
@@ -83,7 +96,15 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/openclaw-core-upgrade.json",
-      "sha256_16": "98adcccef9129a10"
+      "sha256_16": "c1357e1c53b166a4"
+    },
+    {
+      "name": "ozon",
+      "title": "ozon",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/ozon.json",
+      "sha256_16": "920d22e9ec7ffe2a"
     },
     {
       "name": "paired-node-command-execution",
@@ -91,7 +112,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/paired-node-command-execution.json",
-      "sha256_16": "d66c0962990ce480"
+      "sha256_16": "97ab76711003c809"
     },
     {
       "name": "personal-messaging-access",
@@ -99,7 +120,7 @@
       "version": "1.0.0",
       "trust_level": "restricted",
       "endpoint": "/skills/personal-messaging-access.json",
-      "sha256_16": "d6c796a9373bfb6f"
+      "sha256_16": "96f0367a691909ca"
     },
     {
       "name": "scheduled-job-lifecycle",
@@ -107,7 +128,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/scheduled-job-lifecycle.json",
-      "sha256_16": "faa7f9b90ecee56f"
+      "sha256_16": "83b794b5114c8433"
     },
     {
       "name": "secret-exposure-audit",
@@ -115,7 +136,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/secret-exposure-audit.json",
-      "sha256_16": "983da5df4e08031e"
+      "sha256_16": "b2baa19510b26e68"
     },
     {
       "name": "self-hosted-web-search-provider",
@@ -123,7 +144,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/self-hosted-web-search-provider.json",
-      "sha256_16": "4d08084c433008ce"
+      "sha256_16": "0b83577c270ca9cb"
     },
     {
       "name": "session-context-cost-control",
@@ -131,7 +152,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/session-context-cost-control.json",
-      "sha256_16": "c4bc1aacf1851e9b"
+      "sha256_16": "3921353977b72f2a"
     },
     {
       "name": "shared-host-routing-change",
@@ -139,7 +160,7 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/shared-host-routing-change.json",
-      "sha256_16": "a9ad030908c51ab7"
+      "sha256_16": "b8b30897a3453772"
     },
     {
       "name": "virtualbox-vm-recovery",
@@ -147,7 +168,15 @@
       "version": "1.0.0",
       "trust_level": "public",
       "endpoint": "/skills/virtualbox-vm-recovery.json",
-      "sha256_16": "8e9a0e0dd274db3c"
+      "sha256_16": "3240874d0e4006e6"
+    },
+    {
+      "name": "youtube-transcript",
+      "title": "youtube-transcript",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/youtube-transcript.json",
+      "sha256_16": "a9adfb0948b68df5"
     }
   ]
 }

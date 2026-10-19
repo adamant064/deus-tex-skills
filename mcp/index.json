@@ -1,0 +1,100 @@
+{
+  "schema": "deus-tex/mcp-index/v1",
+  "servers": [
+    {
+      "name": "frandex-vision",
+      "title": "Frandex — зрение и память агента",
+      "summary": "Локальный MCP-сервер: распознавание сцен (CLIP), лиц (InsightFace), память по изображениям и поиск по ней. Наружу не ходит, работает на своём железе.",
+      "version": "1.0.0",
+      "trust_level": "restricted",
+      "transport": {
+        "type": "stdio",
+        "command": "/mnt/inference/projects/Frandex/FRANDEX_PRO/venv/bin/python",
+        "args": [
+          "/mnt/inference/projects/Frandex/frandex_mcp.py"
+        ]
+      },
+      "tools": [
+        {
+          "name": "look",
+          "description": "CLIP: класс сцены и описание изображения"
+        },
+        {
+          "name": "faces",
+          "description": "InsightFace: лица и демография"
+        },
+        {
+          "name": "remember",
+          "description": "Записать изображение и заметку в память (ChromaDB)"
+        },
+        {
+          "name": "recall",
+          "description": "Семантический поиск по памяти"
+        },
+        {
+          "name": "daily",
+          "description": "Дневной контекст за дату"
+        }
+      ],
+      "manifest": {
+        "name": "frandex-vision",
+        "inputs": [
+          "image path or bytes",
+          "query text",
+          "date"
+        ],
+        "outputs": [
+          "scene class",
+          "faces",
+          "memory matches"
+        ]
+      },
+      "permissions": {
+        "filesystem": "reads images under caller-provided paths; writes only to vector store",
+        "network": "none — fully local",
+        "shell": "no",
+        "secrets": "none"
+      },
+      "resources": {
+        "vram": "~2 GB",
+        "models": [
+          "CLIP ViT-B-32",
+          "InsightFace buffalo_l"
+        ]
+      },
+      "compatibility": {
+        "harness": [
+          "any MCP stdio client",
+          "OpenClaw >= 2026.x"
+        ],
+        "os": [
+          "linux"
+        ],
+        "mcp": "required (1.0)"
+      },
+      "test_suite": {
+        "kind": "manual-regression",
+        "checks": [
+          "server starts",
+          "look returns class",
+          "recall returns hits"
+        ],
+        "status": "passed"
+      },
+      "execution_policy": {
+        "where": "caller's host, local subprocess",
+        "rights": "declared in permissions",
+        "human_confirmation": [
+          "bulk indexing",
+          "deleting memory"
+        ]
+      },
+      "audit_trail": {
+        "source": "Quant Studio internal harness",
+        "author": "Gella / Quant Studio",
+        "license": "proprietary — read and apply, do not redistribute as your own"
+      },
+      "endpoint": "https://api.deus-tex.ru/mcp/frandex-vision.json"
+    }
+  ]
+}
