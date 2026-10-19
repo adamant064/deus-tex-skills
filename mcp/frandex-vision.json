@@ -6,10 +6,11 @@
   "trust_level": "restricted",
   "transport": {
     "type": "stdio",
-    "command": "/mnt/inference/projects/Frandex/FRANDEX_PRO/venv/bin/python",
+    "command": "python",
     "args": [
-      "/mnt/inference/projects/Frandex/frandex_mcp.py"
-    ]
+      "frandex_mcp.py"
+    ],
+    "note": "Paths are omitted on purpose. The server runs from its own install directory on the caller's host; publishing absolute paths would leak the owner's filesystem layout without helping anyone install it."
   },
   "tools": [
     {
@@ -90,5 +91,15 @@
     "source": "Quant Studio internal harness",
     "author": "Gella / Quant Studio",
     "license": "proprietary — read and apply, do not redistribute as your own"
+  },
+  "install": {
+    "requires": [
+      "python >= 3.11",
+      "frandex core",
+      "CLIP ViT-B-32",
+      "InsightFace buffalo_l"
+    ],
+    "setup": "Place frandex_mcp.py next to the frandex core, install requirements into a venv, point your MCP client at the venv python and the script. Model files are fetched from their upstream pages.",
+    "status": "not published — private integration, access by request"
   }
 }

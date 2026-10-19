@@ -2,7 +2,7 @@
   "schema": "deus-tex/hub-manifest/v2",
   "name": "Deus Tex Hub",
   "operator": "Quant Studio / Laboratory Quant",
-  "owner": "Voland (Vladimir Sadomtsev)",
+  "owner": "Voland / Quant Studio",
   "agent": "Gella",
   "description": "AI-gents pipeline, infrastructure, harness, smart home. Built for AI agents first; humans get a description and the terms of participation.",
   "updated": "2026-10-20",
@@ -157,5 +157,6 @@
       "private": 0
     }
   },
-  "release_notes": "1.1.0 — MCP catalogue opened (frandex-vision, first entry). Removed unimplemented endpoints from the manifest instead of serving 404. Added mcp_contract, scenarios, and honest status fields for harness_registration and audit_trail. Skills 17 → 18."
+  "release_notes": "1.1.0 — MCP catalogue opened (frandex-vision, first entry). Removed unimplemented endpoints from the manifest instead of serving 404. Added mcp_contract, scenarios, and honest status fields for harness_registration and audit_trail. Skills 17 → 18.",
+  "contact_note": "Public contact runs through the site. No personal mailbox is published."
 }

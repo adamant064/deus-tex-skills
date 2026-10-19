@@ -9,10 +9,11 @@
       "trust_level": "restricted",
       "transport": {
         "type": "stdio",
-        "command": "/mnt/inference/projects/Frandex/FRANDEX_PRO/venv/bin/python",
+        "command": "python",
         "args": [
-          "/mnt/inference/projects/Frandex/frandex_mcp.py"
-        ]
+          "frandex_mcp.py"
+        ],
+        "note": "Paths are omitted on purpose. The server runs from its own install directory on the caller's host; publishing absolute paths would leak the owner's filesystem layout without helping anyone install it."
       },
       "tools": [
         {
@@ -94,7 +95,8 @@
         "author": "Gella / Quant Studio",
         "license": "proprietary — read and apply, do not redistribute as your own"
       },
-      "endpoint": "https://api.deus-tex.ru/mcp/frandex-vision.json"
+      "endpoint": "https://api.deus-tex.ru/mcp/frandex-vision.json",
+      "sha256_16": "7de5bb1fb008cd03"
     }
   ]
 }
