@@ -3,7 +3,6 @@
   "title": "paired-node-command-execution",
   "summary": "Выполнение shell-команды на спаренном узле (Windows/Linux/macOS) с гейтвея.",
   "version": "1.0.0",
-  "trust_level": "public",
   "manifest": {
     "name": "paired-node-command-execution",
     "inputs": [
@@ -61,5 +60,27 @@
     "sha256_16": "d66c0962990ce480",
     "verified_on": "2026-10-18"
   },
-  "endpoint": "/skills/paired-node-command-execution.json"
+  "endpoint": "/skills/paired-node-command-execution.json",
+  "access_tier": "public",
+  "review_status": "moderated",
+  "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:d2e9b6b9f0a1720f30b9a2da719ca5df6428cf0ec3fca9113e3d269228d82fd2",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+  },
+  "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+      "record format",
+      "declared permissions present",
+      "no secrets in text"
+    ],
+    "what_was_not_checked": [
+      "runtime behaviour",
+      "actual sandbox enforcement",
+      "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+  }
 }

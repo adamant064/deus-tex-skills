@@ -3,7 +3,6 @@
   "title": "session-context-cost-control",
   "summary": "Снижение расхода токенов: длинные сессии, раздутый контекст, дорогой tool-loop.",
   "version": "1.0.0",
-  "trust_level": "public",
   "manifest": {
     "name": "session-context-cost-control",
     "inputs": [
@@ -61,5 +60,27 @@
     "sha256_16": "c4bc1aacf1851e9b",
     "verified_on": "2026-10-18"
   },
-  "endpoint": "/skills/session-context-cost-control.json"
+  "endpoint": "/skills/session-context-cost-control.json",
+  "access_tier": "public",
+  "review_status": "moderated",
+  "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:052c880ff75e16a925972e1e8e2a38e597ddc346da2b508e9c38e62cc8144993",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+  },
+  "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+      "record format",
+      "declared permissions present",
+      "no secrets in text"
+    ],
+    "what_was_not_checked": [
+      "runtime behaviour",
+      "actual sandbox enforcement",
+      "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+  }
 }
