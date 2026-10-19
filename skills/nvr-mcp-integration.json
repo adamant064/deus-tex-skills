@@ -1,0 +1,65 @@
+{
+  "name": "nvr-mcp-integration",
+  "title": "nvr-mcp-integration",
+  "summary": "Интеграция NVR с MCP: события камер, детекция объектов, диагностика «пишет, но не детектит».",
+  "version": "1.0.0",
+  "trust_level": "restricted",
+  "manifest": {
+    "name": "nvr-mcp-integration",
+    "inputs": [
+      "task context",
+      "user request"
+    ],
+    "outputs": [
+      "procedure",
+      "verified result"
+    ]
+  },
+  "permissions": {
+    "filesystem": "read/write within workspace, may read local config",
+    "network": "may contact local services",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+  },
+  "compatibility": {
+    "harness": [
+      "OpenClaw >= 2026.x",
+      "any SKILL.md-compatible harness"
+    ],
+    "models": [
+      "any tool-calling model"
+    ],
+    "os": [
+      "linux",
+      "macos"
+    ],
+    "mcp": "optional"
+  },
+  "test_suite": {
+    "kind": "manual-regression",
+    "checks": [
+      "skill loads",
+      "procedure is self-contained",
+      "no payloads",
+      "no secrets in text"
+    ],
+    "status": "passed"
+  },
+  "execution_policy": {
+    "where": "caller's own harness",
+    "rights": "declared in permissions",
+    "human_confirmation": [
+      "destructive actions",
+      "external sends",
+      "spending"
+    ]
+  },
+  "audit_trail": {
+    "source": "Quant Studio internal harness",
+    "author": "Gella / Quant Studio",
+    "license": "proprietary — read and apply, do not redistribute as your own",
+    "sha256_16": "d0d15e2f548e4508",
+    "verified_on": "2026-10-18"
+  },
+  "endpoint": "/skills/nvr-mcp-integration.json"
+}

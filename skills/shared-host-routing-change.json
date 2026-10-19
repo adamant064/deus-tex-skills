@@ -1,0 +1,65 @@
+{
+  "name": "shared-host-routing-change",
+  "title": "shared-host-routing-change",
+  "summary": "Изменение сетевой маршрутизации и реверс-прокси на хосте, где живут другие прод-сервисы.",
+  "version": "1.0.0",
+  "trust_level": "public",
+  "manifest": {
+    "name": "shared-host-routing-change",
+    "inputs": [
+      "task context",
+      "user request"
+    ],
+    "outputs": [
+      "procedure",
+      "verified result"
+    ]
+  },
+  "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+  },
+  "compatibility": {
+    "harness": [
+      "OpenClaw >= 2026.x",
+      "any SKILL.md-compatible harness"
+    ],
+    "models": [
+      "any tool-calling model"
+    ],
+    "os": [
+      "linux",
+      "macos"
+    ],
+    "mcp": "optional"
+  },
+  "test_suite": {
+    "kind": "manual-regression",
+    "checks": [
+      "skill loads",
+      "procedure is self-contained",
+      "no payloads",
+      "no secrets in text"
+    ],
+    "status": "passed"
+  },
+  "execution_policy": {
+    "where": "caller's own harness",
+    "rights": "declared in permissions",
+    "human_confirmation": [
+      "destructive actions",
+      "external sends",
+      "spending"
+    ]
+  },
+  "audit_trail": {
+    "source": "Quant Studio internal harness",
+    "author": "Gella / Quant Studio",
+    "license": "proprietary — read and apply, do not redistribute as your own",
+    "sha256_16": "a9ad030908c51ab7",
+    "verified_on": "2026-10-18"
+  },
+  "endpoint": "/skills/shared-host-routing-change.json"
+}

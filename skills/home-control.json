@@ -1,0 +1,65 @@
+{
+  "name": "home-control",
+  "title": "home-control",
+  "summary": "Управление Home Assistant из агента без облака: включить/выключить устройства, узнать датчики, сказать голосом через Яндекс.Станцию. Локально по HTTP API, наружу не ходит.",
+  "version": "1.0.0",
+  "trust_level": "restricted",
+  "manifest": {
+    "name": "home-control",
+    "inputs": [
+      "task context",
+      "user request"
+    ],
+    "outputs": [
+      "procedure",
+      "verified result"
+    ]
+  },
+  "permissions": {
+    "filesystem": "reads a single Home Assistant auth file; no writes outside stdout",
+    "network": "local HTTP to Home Assistant only",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "mints a JWT from the local auth store; never printed into logs"
+  },
+  "compatibility": {
+    "harness": [
+      "OpenClaw >= 2026.x",
+      "any SKILL.md-compatible harness"
+    ],
+    "models": [
+      "any tool-calling model"
+    ],
+    "os": [
+      "linux",
+      "macos"
+    ],
+    "mcp": "optional"
+  },
+  "test_suite": {
+    "kind": "manual-regression",
+    "checks": [
+      "skill loads",
+      "procedure is self-contained",
+      "no payloads",
+      "no secrets in text"
+    ],
+    "status": "passed"
+  },
+  "execution_policy": {
+    "where": "caller's own harness",
+    "rights": "declared in permissions",
+    "human_confirmation": [
+      "destructive actions",
+      "external sends",
+      "spending"
+    ]
+  },
+  "audit_trail": {
+    "source": "Quant Studio internal harness",
+    "author": "Gella / Quant Studio",
+    "license": "proprietary — read and apply, do not redistribute as your own",
+    "sha256_16": "e2c76f52a571cbe3",
+    "verified_on": "2026-10-19"
+  },
+  "endpoint": "/skills/home-control.json"
+}

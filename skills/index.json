@@ -1,0 +1,153 @@
+{
+  "schema": "deus-tex/skills-index/v1",
+  "hub_version": "1.0.0",
+  "updated": "2026-10-19",
+  "license_note": "Each record carries its own license. Attribution required.",
+  "count": 18,
+  "skills": [
+    {
+      "name": "autonomous-continuation",
+      "title": "autonomous-continuation",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/autonomous-continuation.json",
+      "sha256_16": "bdfe2f2d0ddcb003"
+    },
+    {
+      "name": "home-control",
+      "title": "home-control",
+      "version": "1.0.0",
+      "trust_level": "restricted",
+      "endpoint": "/skills/home-control.json",
+      "sha256_16": "e2c76f52a571cbe3"
+    },
+    {
+      "name": "incremental-vector-index-build",
+      "title": "incremental-vector-index-build",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/incremental-vector-index-build.json",
+      "sha256_16": "6a95828084dcb55e"
+    },
+    {
+      "name": "local-image-inspection",
+      "title": "local-image-inspection",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/local-image-inspection.json",
+      "sha256_16": "6b3f7c461aa92bfe"
+    },
+    {
+      "name": "local-voice-bridge",
+      "title": "local-voice-bridge",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/local-voice-bridge.json",
+      "sha256_16": "ae36f09965395b84"
+    },
+    {
+      "name": "managed-browser-profile-recovery",
+      "title": "managed-browser-profile-recovery",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/managed-browser-profile-recovery.json",
+      "sha256_16": "9d1d20ad5966b14a"
+    },
+    {
+      "name": "mcp-server-from-python-core",
+      "title": "mcp-server-from-python-core",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/mcp-server-from-python-core.json",
+      "sha256_16": "cd07035ffd59e116"
+    },
+    {
+      "name": "model-context-window",
+      "title": "model-context-window",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/model-context-window.json",
+      "sha256_16": "1e4d22480597de2b"
+    },
+    {
+      "name": "nvr-mcp-integration",
+      "title": "nvr-mcp-integration",
+      "version": "1.0.0",
+      "trust_level": "restricted",
+      "endpoint": "/skills/nvr-mcp-integration.json",
+      "sha256_16": "d0d15e2f548e4508"
+    },
+    {
+      "name": "openclaw-core-upgrade",
+      "title": "openclaw-core-upgrade",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/openclaw-core-upgrade.json",
+      "sha256_16": "98adcccef9129a10"
+    },
+    {
+      "name": "paired-node-command-execution",
+      "title": "paired-node-command-execution",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/paired-node-command-execution.json",
+      "sha256_16": "d66c0962990ce480"
+    },
+    {
+      "name": "personal-messaging-access",
+      "title": "personal-messaging-access",
+      "version": "1.0.0",
+      "trust_level": "restricted",
+      "endpoint": "/skills/personal-messaging-access.json",
+      "sha256_16": "d6c796a9373bfb6f"
+    },
+    {
+      "name": "scheduled-job-lifecycle",
+      "title": "scheduled-job-lifecycle",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/scheduled-job-lifecycle.json",
+      "sha256_16": "faa7f9b90ecee56f"
+    },
+    {
+      "name": "secret-exposure-audit",
+      "title": "secret-exposure-audit",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/secret-exposure-audit.json",
+      "sha256_16": "983da5df4e08031e"
+    },
+    {
+      "name": "self-hosted-web-search-provider",
+      "title": "self-hosted-web-search-provider",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/self-hosted-web-search-provider.json",
+      "sha256_16": "4d08084c433008ce"
+    },
+    {
+      "name": "session-context-cost-control",
+      "title": "session-context-cost-control",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/session-context-cost-control.json",
+      "sha256_16": "c4bc1aacf1851e9b"
+    },
+    {
+      "name": "shared-host-routing-change",
+      "title": "shared-host-routing-change",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/shared-host-routing-change.json",
+      "sha256_16": "a9ad030908c51ab7"
+    },
+    {
+      "name": "virtualbox-vm-recovery",
+      "title": "virtualbox-vm-recovery",
+      "version": "1.0.0",
+      "trust_level": "public",
+      "endpoint": "/skills/virtualbox-vm-recovery.json",
+      "sha256_16": "8e9a0e0dd274db3c"
+    }
+  ]
+}
