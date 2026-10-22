@@ -1,1178 +1,1264 @@
 {
-  "schema": "deus-tex/skills-index/v2",
-  "hub_version": "1.2.0",
-  "updated": "2026-10-20",
-  "license_note": "Each record carries its own license. Attribution required.",
-  "count": 22,
-  "access_breakdown": {
-    "public": 18,
-    "by-request": 4
+ "schema": "deus-tex/skills-index/v2",
+ "hub_version": "1.2.0",
+ "updated": "2026-10-22",
+ "license_note": "Each record carries its own license. Attribution required.",
+ "count": 23,
+ "access_breakdown": {
+  "public": 18,
+  "by-request": 4
+ },
+ "fields_note": "access_tier is who can see it. review_status is moderation stage. integrity is a digest, not a signature. security_assessment is what was actually checked. public does not mean safe.",
+ "skills": [
+  {
+   "name": "autonomous-continuation",
+   "title": "autonomous-continuation",
+   "summary": "Метод: как агент действует самостоятельно, не спрашивая разрешения на внутреннее. Границы автономии, цикл execute-verify-report, штатные механизмы продолжения.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:8504a0f87fe2c14434c2da5beefeee313c90328e817f032e460d3ca96bb077ca",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/autonomous-continuation.json",
+   "sha256": "e8971b886f4e955e1006232e3815e4bc0ee4fd2c09fdefb389f328be3e7fe820",
+   "sha256_16": "e8971b886f4e955e"
   },
-  "fields_note": "access_tier is who can see it. review_status is moderation stage. integrity is a digest, not a signature. security_assessment is what was actually checked. public does not mean safe.",
-  "skills": [
-    {
-      "name": "autonomous-continuation",
-      "title": "autonomous-continuation",
-      "summary": "Метод: как агент действует самостоятельно, не спрашивая разрешения на внутреннее. Границы автономии, цикл execute-verify-report, штатные механизмы продолжения.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:8504a0f87fe2c14434c2da5beefeee313c90328e817f032e460d3ca96bb077ca",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/autonomous-continuation.json",
-      "sha256": "e8971b886f4e955e1006232e3815e4bc0ee4fd2c09fdefb389f328be3e7fe820",
-      "sha256_16": "e8971b886f4e955e"
-    },
-    {
-      "name": "avito",
-      "title": "avito",
-      "summary": "Работа с Авито через залогиненную CDP-сессию: поиск, вилка цен, подготовка текста объявления. Не публикует.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "by-request",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:0b8b592be71bfaa016232a44795aee5643c9f88574f37f7bdf8c02d5f8276139",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "reads local photos for listings",
-        "network": "Avito through local CDP only",
-        "shell": "no",
-        "secrets": "none — reuses an already logged-in browser session"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/avito.json",
-      "sha256": "a5f9e201a701437ae63785067b23d216c3b528ad7abe5fc6329243d5e01af452",
-      "sha256_16": "a5f9e201a701437a"
-    },
-    {
-      "name": "home-control",
-      "title": "home-control",
-      "summary": "Управление Home Assistant из агента без облака: включить/выключить устройства, узнать датчики, сказать голосом через Яндекс.Станцию. Локально по HTTP API, наружу не ходит.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "by-request",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:98f463dd73468d850964aef1d92b9175c8582b99d7be2ed44dd80ab624fc34cb",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "reads a single Home Assistant auth file; no writes outside stdout",
-        "network": "local HTTP to Home Assistant only",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "mints a JWT from the local auth store; never printed into logs"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/home-control.json",
-      "sha256": "e02edd134f9d247a2e46fc0954a9d5d87ea9a43850443d1fb8aa7e8ebd14a938",
-      "sha256_16": "e02edd134f9d247a"
-    },
-    {
-      "name": "incremental-vector-index-build",
-      "title": "incremental-vector-index-build",
-      "summary": "Инкрементальная индексация растущего локального корпуса в векторный индекс без полного пересчёта.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:3ba8d5a175769e8ed5c2dcda5f65cdccad2145dd1c4b44afe9c8411c4c73028a",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/incremental-vector-index-build.json",
-      "sha256": "6f4c911f1c88bcdc3ecc0bc4ad36053012f5940b47043a79a74689d0c577d199",
-      "sha256_16": "6f4c911f1c88bcdc"
-    },
-    {
-      "name": "local-image-inspection",
-      "title": "local-image-inspection",
-      "summary": "Локальный осмотр изображений: описание, чтение текста со скриншотов и ошибок — без облака.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:b3d6bf6af3d1c04383d6d9f3b9791c71f70818de0a5fc67e7346de42c7a6984d",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/local-image-inspection.json",
-      "sha256": "aa79c90bb0ae350f37aca0431a6a0696e749323256ca3263aa7c02bd36f56cfe",
-      "sha256_16": "aa79c90bb0ae350f"
-    },
-    {
-      "name": "local-voice-bridge",
-      "title": "local-voice-bridge",
-      "summary": "Локальный мост распознавания речи: диагностика «микрофон не даёт текст», подключение STT.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:d8d577fdc90525b2c4b7f0d13d936d31a33a70c60e54a7239d4cfd76b2b83733",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/local-voice-bridge.json",
-      "sha256": "eb1a35c887145d22f380fdc36546117873583749f68a6f390a4b6cd288489df9",
-      "sha256_16": "eb1a35c887145d22"
-    },
-    {
-      "name": "managed-browser-profile-recovery",
-      "title": "managed-browser-profile-recovery",
-      "summary": "Восстановление управляемого браузерного профиля: «профиль не запущен», потерянный логин, протухшие ссылки.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:5747b94452d9c01972fae643f052004e6fe22c28a66f535aa63ffc11ef0e3709",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/managed-browser-profile-recovery.json",
-      "sha256": "c25b3092a156ec7a00fcfea5b3068ec4a1983b966bd7d31585a211e2904c435e",
-      "sha256_16": "c25b3092a156ec7a"
-    },
-    {
-      "name": "mcp-server-from-python-core",
-      "title": "mcp-server-from-python-core",
-      "summary": "Обернуть существующее Python-приложение в локальный stdio MCP-сервер.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:263ba5f0c7e5b8437bbd620ea3151346349b5aa31304a0692f315c514c4fcfa7",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/mcp-server-from-python-core.json",
-      "sha256": "e0ffbcc32f40dc08d4d62e95dba690415aeae0d8c7801037015e8302e20f0a6d",
-      "sha256_16": "e0ffbcc32f40dc08"
-    },
-    {
-      "name": "model-context-window",
-      "title": "model-context-window",
-      "summary": "Настройка окна контекста модели и лимита активного ввода при давлении на CPU/RAM.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:4b29bc50f8ad71dc8edeae62077c1ef90dfc502389e92d2290a863e396dbdd14",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/model-context-window.json",
-      "sha256": "01d8b88a7da13ecd01fc95de6f4437599e1366762344cce5381574f3c0455efc",
-      "sha256_16": "01d8b88a7da13ecd"
-    },
-    {
-      "name": "nvr-mcp-integration",
-      "title": "nvr-mcp-integration",
-      "summary": "Интеграция NVR с MCP: события камер, детекция объектов, диагностика «пишет, но не детектит».",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "by-request",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:52a950c6683385d13ab565b5b1463574775d4a8e470864d294aa8fcbddcea423",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace, may read local config",
-        "network": "may contact local services",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/nvr-mcp-integration.json",
-      "sha256": "e11826a4a2d6af6e45f1204c1c22e2fbdcd3236e31cf81d9e35b614d29119e43",
-      "sha256_16": "e11826a4a2d6af6e"
-    },
-    {
-      "name": "openclaw-core-upgrade",
-      "title": "openclaw-core-upgrade",
-      "summary": "Обновление ядра OpenClaw и починка неудавшегося или пропущенного апгрейда.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:e72f8816efa4682171934810690376a96de7bd7cf947a8728b66572a0f16df93",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/openclaw-core-upgrade.json",
-      "sha256": "7adfeab109fa8dfc62938131881c6fe27a2dc78edf958d0a778ad760562184b9",
-      "sha256_16": "7adfeab109fa8dfc"
-    },
-    {
-      "name": "ozon",
-      "title": "ozon",
-      "summary": "Анализ рынка Ozon: поиск и цены через CDP, плюс заготовка под официальный Seller API.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:20980aaf6d4cc7224c681ef7ff375391f03a6329bb601a361dccd1abe17a419b",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "none",
-        "network": "ozon.ru through local CDP; api-seller.ozon.ru with keys",
-        "shell": "no",
-        "secrets": "reads OZON_CLIENT_ID and OZON_API_KEY from env; never printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/ozon.json",
-      "sha256": "f22480178f252b48c9f21f7990fc3698781e2dba6557066be3ee5b722c5d6d4b",
-      "sha256_16": "f22480178f252b48"
-    },
-    {
-      "name": "paired-node-command-execution",
-      "title": "paired-node-command-execution",
-      "summary": "Выполнение shell-команды на спаренном узле (Windows/Linux/macOS) с гейтвея.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:d2e9b6b9f0a1720f30b9a2da719ca5df6428cf0ec3fca9113e3d269228d82fd2",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/paired-node-command-execution.json",
-      "sha256": "dd904c62c03c5ff13fad3e7f6add88ec69a918d1134191eea1e6442daeb75da4",
-      "sha256_16": "dd904c62c03c5ff1"
-    },
-    {
-      "name": "personal-messaging-access",
-      "title": "personal-messaging-access",
-      "summary": "Личный доступ к Telegram/email: развести бота и аккаунт, проверить scope, транспорт, отправку и приём.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "by-request",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:fc35480cd02f394f994357476d3f8b78c8adc0a82d6204e1599703d47580a42d",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace, may read local config",
-        "network": "may contact local services",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/personal-messaging-access.json",
-      "sha256": "459347b2b38d67c92d4957979eef8198a3f67bdcf67c794882c34da5b32897e5",
-      "sha256_16": "459347b2b38d67c9"
-    },
-    {
-      "name": "preflight-inventory",
-      "title": "preflight-inventory",
-      "summary": "Порядок проверки возможностей перед любой задачей: сначала готовые скиллы и инструменты, потом арсенал, и только затем диск, сеть и сервисы. Экономит время и не даёт лезть в систему вслепую.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:d30e6aa0b50c87d56ca6153e44ae4456526ddf963f688a8f03891f6eeba40256",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read within workspace, may list skills directories",
-        "network": "none required",
-        "shell": "yes — read-only inspection commands",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/preflight-inventory.json",
-      "sha256": "a79f9ab0ed9dc2c336c3f27617e51bd3ee880fee9a7b03328b9af723a16bbca1",
-      "sha256_16": "a79f9ab0ed9dc2c3"
-    },
-    {
-      "name": "scheduled-job-lifecycle",
-      "title": "scheduled-job-lifecycle",
-      "summary": "Управление автоматизациями: heartbeat, cron, задачи «every» — создание, правка, удаление.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:fdff076432c5af7f79e8b84ea50416c6dae83a9f1775acfcf845b35c248e06ae",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/scheduled-job-lifecycle.json",
-      "sha256": "7aa80df314a89e89608a23d7208d7d8fdac030f9774b221a24824b340044b244",
-      "sha256_16": "7aa80df314a89e89"
-    },
-    {
-      "name": "secret-exposure-audit",
-      "title": "secret-exposure-audit",
-      "summary": "Аудит путей утечки учётных данных в дочерние процессы, конфиги и логи. Без раскрытия значений.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:49ccff973c5510d6e200d47053d633029837a1ee1ea9324900dc7a209d982735",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/secret-exposure-audit.json",
-      "sha256": "c03aad40e19de9dbb653f80cfdc9f33368efdd3fa63e4f0d0e43212945249915",
-      "sha256_16": "c03aad40e19de9db"
-    },
-    {
-      "name": "self-hosted-web-search-provider",
-      "title": "self-hosted-web-search-provider",
-      "summary": "Свой поисковый провайдер вместо отказавшего web_search (429, квота, отключён).",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:3e4dd701cb390ea9bf86631f9eeb399919a05bffc7fb2a1f619e9fc10b4e2954",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/self-hosted-web-search-provider.json",
-      "sha256": "ecccc625e7024e3a9aef9405be79f0db2cb4fa926c74fb51a26014ba8c15a128",
-      "sha256_16": "ecccc625e7024e3a"
-    },
-    {
-      "name": "session-context-cost-control",
-      "title": "session-context-cost-control",
-      "summary": "Снижение расхода токенов: длинные сессии, раздутый контекст, дорогой tool-loop.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:052c880ff75e16a925972e1e8e2a38e597ddc346da2b508e9c38e62cc8144993",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/session-context-cost-control.json",
-      "sha256": "ee07fd721241da3f64a3f14345fea79438febd9f48724efc3be59ac9eda46c4e",
-      "sha256_16": "ee07fd721241da3f"
-    },
-    {
-      "name": "shared-host-routing-change",
-      "title": "shared-host-routing-change",
-      "summary": "Изменение сетевой маршрутизации и реверс-прокси на хосте, где живут другие прод-сервисы.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:d9d14ebcdb1577c40dd31dca9d5d452e8e0944e5f6e6007928ba7d81619e2306",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/shared-host-routing-change.json",
-      "sha256": "fc8b1e6838cbc25f1ceca763ff95c8a9ad03b3ce8cc160fb682bef44f834ed5c",
-      "sha256_16": "fc8b1e6838cbc25f"
-    },
-    {
-      "name": "virtualbox-vm-recovery",
-      "title": "virtualbox-vm-recovery",
-      "summary": "Восстановление зависшей VirtualBox VM, не монтирующегося .vdi, headless-гостя без ответа.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:1c532e4f6ae68babd1d0ce8c1777e9305803e5b9fbf6b86935b941643465b8a2",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "read/write within workspace",
-        "network": "none required",
-        "shell": "yes — commands are explicit and reversible",
-        "secrets": "never read or printed"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any tool-calling model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/virtualbox-vm-recovery.json",
-      "sha256": "c7d579e70ce7d5ff05fe5ec7b6046cd22ea86b2be10ce2c40761bbc6a5421d60",
-      "sha256_16": "c7d579e70ce7d5ff"
-    },
-    {
-      "name": "youtube-transcript",
-      "title": "youtube-transcript",
-      "summary": "Текст видео по ссылке — YouTube, Rutube, VK. Субтитры через yt-dlp без скачивания видео.",
-      "version": "1.0.0",
-      "kind": "skill",
-      "access_tier": "public",
-      "review_status": "moderated",
-      "integrity": {
-        "digest_algorithm": "sha256",
-        "digest": "sha256:e378b76e31c2db0ff956641cf85b40f7fb467c2caba99f9cceb9cee0f9f5be3a",
-        "signed": false,
-        "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
-      },
-      "security_assessment": {
-        "status": "not-assessed",
-        "what_was_checked": [
-          "record format",
-          "declared permissions present",
-          "no secrets in text"
-        ],
-        "what_was_not_checked": [
-          "runtime behaviour",
-          "actual sandbox enforcement",
-          "dependency provenance"
-        ],
-        "note": "Moderation checks the record, not the code. public does not mean safe."
-      },
-      "permissions": {
-        "filesystem": "none — writes to stdout",
-        "network": "youtube.com, rutube.ru, vk.com",
-        "shell": "yes — invokes yt-dlp",
-        "secrets": "none"
-      },
-      "compatibility": {
-        "harness": [
-          "OpenClaw >= 2026.x",
-          "any SKILL.md-compatible harness"
-        ],
-        "models": [
-          "any text model"
-        ],
-        "os": [
-          "linux",
-          "macos"
-        ],
-        "mcp": "optional"
-      },
-      "license": "proprietary — read and apply, do not redistribute as your own",
-      "endpoint": "/skills/youtube-transcript.json",
-      "sha256": "24e85b7bf183c819c8e9e2602ceef7d04622da084f29fa0a14302c667a3db5e9",
-      "sha256_16": "24e85b7bf183c819"
-    }
-  ]
+  {
+   "name": "avito",
+   "title": "avito",
+   "summary": "Работа с Авито через залогиненную CDP-сессию: поиск, вилка цен, подготовка текста объявления. Не публикует.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "by-request",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:0b8b592be71bfaa016232a44795aee5643c9f88574f37f7bdf8c02d5f8276139",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "reads local photos for listings",
+    "network": "Avito through local CDP only",
+    "shell": "no",
+    "secrets": "none — reuses an already logged-in browser session"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/avito.json",
+   "sha256": "a5f9e201a701437ae63785067b23d216c3b528ad7abe5fc6329243d5e01af452",
+   "sha256_16": "a5f9e201a701437a"
+  },
+  {
+   "name": "hhru-job-application",
+   "title": "hh.ru — отклик на вакансию через браузер",
+   "summary": "Дескриптор возможности: найти вакансию на hh.ru, открыть форму отклика, вставить сопроводительное письмо, отправить и подтвердить результат тремя независимыми проверками. Операционная процедура не публикуется.",
+   "version": "1.0.0",
+   "manifest": {
+    "name": "hhru-job-application",
+    "inputs": [
+     "vacancy id or search query",
+     "cover letter text",
+     "resume visibility state"
+    ],
+    "outputs": [
+     "submitted response",
+     "verification evidence"
+    ]
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace scratch",
+    "network": "hh.ru through an authenticated browser session",
+    "shell": "none required",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "browser-capable harness with CDP"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "test_suite": {
+    "kind": "field-tested",
+    "checks": [
+     "response accepted (confirmation toast)",
+     "negotiations card shows the vacancy with today's date",
+     "chat contains the full letter text"
+    ],
+    "status": "passed",
+    "evidence": "10 applications sent and verified 2026-10-22"
+   },
+   "execution_policy": {
+    "where": "caller's own harness and browser profile",
+    "rights": "declared in permissions",
+    "human_confirmation": [
+     "sending any application",
+     "changing resume visibility",
+     "answering employer questionnaires on the user's behalf"
+    ]
+   },
+   "audit_trail": {
+    "source": "Quant Studio internal harness",
+    "author": "Gella / Quant Studio",
+    "license": "proprietary — read and apply, do not redistribute as your own",
+    "verified_on": "2026-10-22"
+   },
+   "endpoint": "/skills/hhru-job-application.json",
+   "access_tier": "public",
+   "review_status": "submitted",
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "employer-side effects",
+     "captcha and rate-limit handling"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:bda2831e0759b7e9a4e1a4edfe76b159b5219669200db2481b854a399b921693",
+    "signed": false,
+    "note": "Digest covers this record's canonical content. Signature not implemented — do not treat as provenance proof."
+   }
+  },
+  {
+   "name": "home-control",
+   "title": "home-control",
+   "summary": "Управление Home Assistant из агента без облака: включить/выключить устройства, узнать датчики, сказать голосом через Яндекс.Станцию. Локально по HTTP API, наружу не ходит.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "by-request",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:98f463dd73468d850964aef1d92b9175c8582b99d7be2ed44dd80ab624fc34cb",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "reads a single Home Assistant auth file; no writes outside stdout",
+    "network": "local HTTP to Home Assistant only",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "mints a JWT from the local auth store; never printed into logs"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/home-control.json",
+   "sha256": "e02edd134f9d247a2e46fc0954a9d5d87ea9a43850443d1fb8aa7e8ebd14a938",
+   "sha256_16": "e02edd134f9d247a"
+  },
+  {
+   "name": "incremental-vector-index-build",
+   "title": "incremental-vector-index-build",
+   "summary": "Инкрементальная индексация растущего локального корпуса в векторный индекс без полного пересчёта.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:3ba8d5a175769e8ed5c2dcda5f65cdccad2145dd1c4b44afe9c8411c4c73028a",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/incremental-vector-index-build.json",
+   "sha256": "6f4c911f1c88bcdc3ecc0bc4ad36053012f5940b47043a79a74689d0c577d199",
+   "sha256_16": "6f4c911f1c88bcdc"
+  },
+  {
+   "name": "local-image-inspection",
+   "title": "local-image-inspection",
+   "summary": "Локальный осмотр изображений: описание, чтение текста со скриншотов и ошибок — без облака.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:b3d6bf6af3d1c04383d6d9f3b9791c71f70818de0a5fc67e7346de42c7a6984d",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/local-image-inspection.json",
+   "sha256": "aa79c90bb0ae350f37aca0431a6a0696e749323256ca3263aa7c02bd36f56cfe",
+   "sha256_16": "aa79c90bb0ae350f"
+  },
+  {
+   "name": "local-voice-bridge",
+   "title": "local-voice-bridge",
+   "summary": "Локальный мост распознавания речи: диагностика «микрофон не даёт текст», подключение STT.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:d8d577fdc90525b2c4b7f0d13d936d31a33a70c60e54a7239d4cfd76b2b83733",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/local-voice-bridge.json",
+   "sha256": "eb1a35c887145d22f380fdc36546117873583749f68a6f390a4b6cd288489df9",
+   "sha256_16": "eb1a35c887145d22"
+  },
+  {
+   "name": "managed-browser-profile-recovery",
+   "title": "managed-browser-profile-recovery",
+   "summary": "Восстановление управляемого браузерного профиля: «профиль не запущен», потерянный логин, протухшие ссылки.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:5747b94452d9c01972fae643f052004e6fe22c28a66f535aa63ffc11ef0e3709",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/managed-browser-profile-recovery.json",
+   "sha256": "c25b3092a156ec7a00fcfea5b3068ec4a1983b966bd7d31585a211e2904c435e",
+   "sha256_16": "c25b3092a156ec7a"
+  },
+  {
+   "name": "mcp-server-from-python-core",
+   "title": "mcp-server-from-python-core",
+   "summary": "Обернуть существующее Python-приложение в локальный stdio MCP-сервер.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:263ba5f0c7e5b8437bbd620ea3151346349b5aa31304a0692f315c514c4fcfa7",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/mcp-server-from-python-core.json",
+   "sha256": "e0ffbcc32f40dc08d4d62e95dba690415aeae0d8c7801037015e8302e20f0a6d",
+   "sha256_16": "e0ffbcc32f40dc08"
+  },
+  {
+   "name": "model-context-window",
+   "title": "model-context-window",
+   "summary": "Настройка окна контекста модели и лимита активного ввода при давлении на CPU/RAM.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:4b29bc50f8ad71dc8edeae62077c1ef90dfc502389e92d2290a863e396dbdd14",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/model-context-window.json",
+   "sha256": "01d8b88a7da13ecd01fc95de6f4437599e1366762344cce5381574f3c0455efc",
+   "sha256_16": "01d8b88a7da13ecd"
+  },
+  {
+   "name": "nvr-mcp-integration",
+   "title": "nvr-mcp-integration",
+   "summary": "Интеграция NVR с MCP: события камер, детекция объектов, диагностика «пишет, но не детектит».",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "by-request",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:52a950c6683385d13ab565b5b1463574775d4a8e470864d294aa8fcbddcea423",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace, may read local config",
+    "network": "may contact local services",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/nvr-mcp-integration.json",
+   "sha256": "e11826a4a2d6af6e45f1204c1c22e2fbdcd3236e31cf81d9e35b614d29119e43",
+   "sha256_16": "e11826a4a2d6af6e"
+  },
+  {
+   "name": "openclaw-core-upgrade",
+   "title": "openclaw-core-upgrade",
+   "summary": "Обновление ядра OpenClaw и починка неудавшегося или пропущенного апгрейда.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:e72f8816efa4682171934810690376a96de7bd7cf947a8728b66572a0f16df93",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/openclaw-core-upgrade.json",
+   "sha256": "7adfeab109fa8dfc62938131881c6fe27a2dc78edf958d0a778ad760562184b9",
+   "sha256_16": "7adfeab109fa8dfc"
+  },
+  {
+   "name": "ozon",
+   "title": "ozon",
+   "summary": "Анализ рынка Ozon: поиск и цены через CDP, плюс заготовка под официальный Seller API.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:20980aaf6d4cc7224c681ef7ff375391f03a6329bb601a361dccd1abe17a419b",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "none",
+    "network": "ozon.ru through local CDP; api-seller.ozon.ru with keys",
+    "shell": "no",
+    "secrets": "reads OZON_CLIENT_ID and OZON_API_KEY from env; never printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/ozon.json",
+   "sha256": "f22480178f252b48c9f21f7990fc3698781e2dba6557066be3ee5b722c5d6d4b",
+   "sha256_16": "f22480178f252b48"
+  },
+  {
+   "name": "paired-node-command-execution",
+   "title": "paired-node-command-execution",
+   "summary": "Выполнение shell-команды на спаренном узле (Windows/Linux/macOS) с гейтвея.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:d2e9b6b9f0a1720f30b9a2da719ca5df6428cf0ec3fca9113e3d269228d82fd2",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/paired-node-command-execution.json",
+   "sha256": "dd904c62c03c5ff13fad3e7f6add88ec69a918d1134191eea1e6442daeb75da4",
+   "sha256_16": "dd904c62c03c5ff1"
+  },
+  {
+   "name": "personal-messaging-access",
+   "title": "personal-messaging-access",
+   "summary": "Личный доступ к Telegram/email: развести бота и аккаунт, проверить scope, транспорт, отправку и приём.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "by-request",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:fc35480cd02f394f994357476d3f8b78c8adc0a82d6204e1599703d47580a42d",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace, may read local config",
+    "network": "may contact local services",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/personal-messaging-access.json",
+   "sha256": "459347b2b38d67c92d4957979eef8198a3f67bdcf67c794882c34da5b32897e5",
+   "sha256_16": "459347b2b38d67c9"
+  },
+  {
+   "name": "preflight-inventory",
+   "title": "preflight-inventory",
+   "summary": "Порядок проверки возможностей перед любой задачей: сначала готовые скиллы и инструменты, потом арсенал, и только затем диск, сеть и сервисы. Экономит время и не даёт лезть в систему вслепую.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:d30e6aa0b50c87d56ca6153e44ae4456526ddf963f688a8f03891f6eeba40256",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read within workspace, may list skills directories",
+    "network": "none required",
+    "shell": "yes — read-only inspection commands",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/preflight-inventory.json",
+   "sha256": "a79f9ab0ed9dc2c336c3f27617e51bd3ee880fee9a7b03328b9af723a16bbca1",
+   "sha256_16": "a79f9ab0ed9dc2c3"
+  },
+  {
+   "name": "scheduled-job-lifecycle",
+   "title": "scheduled-job-lifecycle",
+   "summary": "Управление автоматизациями: heartbeat, cron, задачи «every» — создание, правка, удаление.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:fdff076432c5af7f79e8b84ea50416c6dae83a9f1775acfcf845b35c248e06ae",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/scheduled-job-lifecycle.json",
+   "sha256": "7aa80df314a89e89608a23d7208d7d8fdac030f9774b221a24824b340044b244",
+   "sha256_16": "7aa80df314a89e89"
+  },
+  {
+   "name": "secret-exposure-audit",
+   "title": "secret-exposure-audit",
+   "summary": "Аудит путей утечки учётных данных в дочерние процессы, конфиги и логи. Без раскрытия значений.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:49ccff973c5510d6e200d47053d633029837a1ee1ea9324900dc7a209d982735",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/secret-exposure-audit.json",
+   "sha256": "c03aad40e19de9dbb653f80cfdc9f33368efdd3fa63e4f0d0e43212945249915",
+   "sha256_16": "c03aad40e19de9db"
+  },
+  {
+   "name": "self-hosted-web-search-provider",
+   "title": "self-hosted-web-search-provider",
+   "summary": "Свой поисковый провайдер вместо отказавшего web_search (429, квота, отключён).",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:3e4dd701cb390ea9bf86631f9eeb399919a05bffc7fb2a1f619e9fc10b4e2954",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/self-hosted-web-search-provider.json",
+   "sha256": "ecccc625e7024e3a9aef9405be79f0db2cb4fa926c74fb51a26014ba8c15a128",
+   "sha256_16": "ecccc625e7024e3a"
+  },
+  {
+   "name": "session-context-cost-control",
+   "title": "session-context-cost-control",
+   "summary": "Снижение расхода токенов: длинные сессии, раздутый контекст, дорогой tool-loop.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:052c880ff75e16a925972e1e8e2a38e597ddc346da2b508e9c38e62cc8144993",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/session-context-cost-control.json",
+   "sha256": "ee07fd721241da3f64a3f14345fea79438febd9f48724efc3be59ac9eda46c4e",
+   "sha256_16": "ee07fd721241da3f"
+  },
+  {
+   "name": "shared-host-routing-change",
+   "title": "shared-host-routing-change",
+   "summary": "Изменение сетевой маршрутизации и реверс-прокси на хосте, где живут другие прод-сервисы.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:d9d14ebcdb1577c40dd31dca9d5d452e8e0944e5f6e6007928ba7d81619e2306",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/shared-host-routing-change.json",
+   "sha256": "fc8b1e6838cbc25f1ceca763ff95c8a9ad03b3ce8cc160fb682bef44f834ed5c",
+   "sha256_16": "fc8b1e6838cbc25f"
+  },
+  {
+   "name": "virtualbox-vm-recovery",
+   "title": "virtualbox-vm-recovery",
+   "summary": "Восстановление зависшей VirtualBox VM, не монтирующегося .vdi, headless-гостя без ответа.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:1c532e4f6ae68babd1d0ce8c1777e9305803e5b9fbf6b86935b941643465b8a2",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "read/write within workspace",
+    "network": "none required",
+    "shell": "yes — commands are explicit and reversible",
+    "secrets": "never read or printed"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any tool-calling model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/virtualbox-vm-recovery.json",
+   "sha256": "c7d579e70ce7d5ff05fe5ec7b6046cd22ea86b2be10ce2c40761bbc6a5421d60",
+   "sha256_16": "c7d579e70ce7d5ff"
+  },
+  {
+   "name": "youtube-transcript",
+   "title": "youtube-transcript",
+   "summary": "Текст видео по ссылке — YouTube, Rutube, VK. Субтитры через yt-dlp без скачивания видео.",
+   "version": "1.0.0",
+   "kind": "skill",
+   "access_tier": "public",
+   "review_status": "moderated",
+   "integrity": {
+    "digest_algorithm": "sha256",
+    "digest": "sha256:e378b76e31c2db0ff956641cf85b40f7fb467c2caba99f9cceb9cee0f9f5be3a",
+    "signed": false,
+    "note": "Digest covers this record's own bytes. Signature not yet implemented — do not treat as provenance proof."
+   },
+   "security_assessment": {
+    "status": "not-assessed",
+    "what_was_checked": [
+     "record format",
+     "declared permissions present",
+     "no secrets in text"
+    ],
+    "what_was_not_checked": [
+     "runtime behaviour",
+     "actual sandbox enforcement",
+     "dependency provenance"
+    ],
+    "note": "Moderation checks the record, not the code. public does not mean safe."
+   },
+   "permissions": {
+    "filesystem": "none — writes to stdout",
+    "network": "youtube.com, rutube.ru, vk.com",
+    "shell": "yes — invokes yt-dlp",
+    "secrets": "none"
+   },
+   "compatibility": {
+    "harness": [
+     "OpenClaw >= 2026.x",
+     "any SKILL.md-compatible harness"
+    ],
+    "models": [
+     "any text model"
+    ],
+    "os": [
+     "linux",
+     "macos"
+    ],
+    "mcp": "optional"
+   },
+   "license": "proprietary — read and apply, do not redistribute as your own",
+   "endpoint": "/skills/youtube-transcript.json",
+   "sha256": "24e85b7bf183c819c8e9e2602ceef7d04622da084f29fa0a14302c667a3db5e9",
+   "sha256_16": "24e85b7bf183c819"
+  }
+ ]
 }

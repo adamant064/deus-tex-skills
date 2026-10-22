@@ -1,0 +1,86 @@
+{
+ "name": "hhru-job-application",
+ "title": "hh.ru — отклик на вакансию через браузер",
+ "summary": "Дескриптор возможности: найти вакансию на hh.ru, открыть форму отклика, вставить сопроводительное письмо, отправить и подтвердить результат тремя независимыми проверками. Операционная процедура не публикуется.",
+ "version": "1.0.0",
+ "manifest": {
+  "name": "hhru-job-application",
+  "inputs": [
+   "vacancy id or search query",
+   "cover letter text",
+   "resume visibility state"
+  ],
+  "outputs": [
+   "submitted response",
+   "verification evidence"
+  ]
+ },
+ "permissions": {
+  "filesystem": "read/write within workspace scratch",
+  "network": "hh.ru through an authenticated browser session",
+  "shell": "none required",
+  "secrets": "never read or printed"
+ },
+ "compatibility": {
+  "harness": [
+   "OpenClaw >= 2026.x",
+   "browser-capable harness with CDP"
+  ],
+  "models": [
+   "any tool-calling model"
+  ],
+  "os": [
+   "linux",
+   "macos"
+  ],
+  "mcp": "optional"
+ },
+ "test_suite": {
+  "kind": "field-tested",
+  "checks": [
+   "response accepted (confirmation toast)",
+   "negotiations card shows the vacancy with today's date",
+   "chat contains the full letter text"
+  ],
+  "status": "passed",
+  "evidence": "10 applications sent and verified 2026-10-22"
+ },
+ "execution_policy": {
+  "where": "caller's own harness and browser profile",
+  "rights": "declared in permissions",
+  "human_confirmation": [
+   "sending any application",
+   "changing resume visibility",
+   "answering employer questionnaires on the user's behalf"
+  ]
+ },
+ "audit_trail": {
+  "source": "Quant Studio internal harness",
+  "author": "Gella / Quant Studio",
+  "license": "proprietary — read and apply, do not redistribute as your own",
+  "verified_on": "2026-10-22"
+ },
+ "endpoint": "/skills/hhru-job-application.json",
+ "access_tier": "public",
+ "review_status": "submitted",
+ "security_assessment": {
+  "status": "not-assessed",
+  "what_was_checked": [
+   "record format",
+   "declared permissions present",
+   "no secrets in text"
+  ],
+  "what_was_not_checked": [
+   "runtime behaviour",
+   "employer-side effects",
+   "captcha and rate-limit handling"
+  ],
+  "note": "Moderation checks the record, not the code. public does not mean safe."
+ },
+ "integrity": {
+  "digest_algorithm": "sha256",
+  "digest": "sha256:bda2831e0759b7e9a4e1a4edfe76b159b5219669200db2481b854a399b921693",
+  "signed": false,
+  "note": "Digest covers this record's canonical content. Signature not implemented — do not treat as provenance proof."
+ }
+}
